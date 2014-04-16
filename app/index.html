@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="FlickrSearch">
+    <head>
+        <meta charset="utf-8">
+        <title>Flickr search</title>
+        <link rel="stylesheet" href="css/app.css">
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-resource/angular-resource.js"></script>
+        <script src="../app/js/app.js"></script>
+        <script src="../app/js/controllers.js"></script>
+    </head>
+    <body>
+        <div class="photos: 220;" ng-controller="PhotoCtrl">
+            <div>
+                <input type="text" ng-model="keywords" placeholder="Keywords...">
+                <button type="submit" class="btn" ng-click="search()">Search</button>
+            </div>
+            <div class="photo-item" ng-repeat="item in photos.items" >
+                <img id="photo" data-caman="brightness(10) contrast(100) sepia(60) saturation(-30)" ng-src="{{ item.media.m }}" />
+            </div>
+        </div>
+    </body>
+</html>
